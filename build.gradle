@@ -1,9 +1,8 @@
 plugins {
     id 'java'
-    id 'application'
     id 'com.bmuschko.docker-java-application' version '6.1.2'
 }
-
+apply plugin: 'application'
 group 'LavaPodler'
 version 'LavaPodler'
 
@@ -47,7 +46,6 @@ docker {
         baseImage = 'openjdk:11-jre-slim'
         maintainer = 'Matthieu P "matthieu.p@unix-corp.tech"'
         jvmArgs = ['-Xmx1G', '-Djdk.tls.client.protocols=TLSv1.1,TLSv1.2']
-        mainClassName = mainClassName
     }
 }
 dockerCreateDockerfile {
