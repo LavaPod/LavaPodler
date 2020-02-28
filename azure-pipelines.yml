@@ -26,5 +26,5 @@ steps:
     containerRegistry: 'Matthieu''s docker'
     repository: 'lavapod/lavapodler'
     command: 'buildAndPush'
-    Dockerfile: 'LavaPodler/build/docker/Dockerfile'
+    Dockerfile: 'build/docker/Dockerfile'
     tags: '$(Build.SourceBranchName)'
