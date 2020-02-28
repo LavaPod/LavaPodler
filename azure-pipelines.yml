@@ -20,4 +20,11 @@ steps:
     jdkArchitectureOption: 'x64'
     publishJUnitResults: true
     testResultsFiles: '**/TEST-*.xml'
-    tasks: 'build'
+    tasks: 'wrapper dockerCreateDockerfile'
+- task: Docker@2
+  inputs:
+    containerRegistry: 'Matthieu''s docker'
+    repository: 'lavapod/lavapodler'
+    command: 'buildAndPush'
+    Dockerfile: 'LavaPodler/build/docker/Dockerfile'
+    tags: '$(Build.SourceBranchName)'
